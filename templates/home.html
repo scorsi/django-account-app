@@ -1,0 +1,13 @@
+{% extends 'parts/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s12">
+            <h2>Hello {% if request.user.is_authenticated %}{{ request.user.username }}{% else %}guy{% endif %}!</h2>
+        </div>
+    </div>
+
+{% endblock %}

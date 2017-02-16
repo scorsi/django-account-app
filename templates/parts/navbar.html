@@ -1,0 +1,28 @@
+<ul id="dropdown-account" class="dropdown-content">
+    <li><a href="/account/edit">Edit account</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+</ul>
+
+<nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a class="dropdown-button" href="#!" data-activates="dropdown-account">
+                            Account<i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="/account/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/account/register">Register</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
